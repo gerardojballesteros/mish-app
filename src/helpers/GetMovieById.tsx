@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useApi } from "../hooks/useApi";
 
 export const GetMovieById = ( id: any ) => {
