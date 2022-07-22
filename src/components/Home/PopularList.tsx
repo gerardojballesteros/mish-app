@@ -1,15 +1,14 @@
-import 'react-multi-carousel/lib/styles.css';
-import Carousel from 'react-multi-carousel';
-import  responsive  from './obj/Carousel';
 import { List, Card, Title, Average } from '../../styles/components/List';
 import { useApi } from '../../hooks/useApi';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import responsive from './obj/Carousel';
 
 
 export const PopularList = () => {
 
     const { popular } = useApi()
-
 
   return (
     <List className="list-up animate__animated animate__fadeIn animate__delay-1s">

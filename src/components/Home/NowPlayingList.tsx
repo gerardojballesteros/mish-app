@@ -1,10 +1,9 @@
 import { List, Card, Title, Average } from '../../styles/components/List';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import { useApi } from '../../hooks/useApi';
-import  responsive  from './obj/Carousel';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
+import  responsive  from './obj/Carousel';
+import 'react-multi-carousel/lib/styles.css';
+import Carousel from 'react-multi-carousel';
 
 
 export const NowPlayingList = () => {

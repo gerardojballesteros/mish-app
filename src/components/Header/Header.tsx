@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { MyHeader, HeaderTitle, Nav } from "../../styles/HeaderStyle"
 
-
 export const Header = () => {
 
   window.addEventListener("scroll", () => {
@@ -9,7 +8,6 @@ export const Header = () => {
       document.querySelector<any>("header").classList.remove("backdrop");
     } else {
       document.querySelector<any>("header").classList.add("backdrop");
-      
     }
   });
 

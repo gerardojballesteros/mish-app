@@ -1,12 +1,10 @@
 import { useApi } from "../../hooks/useApi";
 import { Bg, Description, Title, PopularScreen, Overview } from '../../styles/Home/PopularScreen';
 import { Button } from '../../styles/Button/Button';
+import { Link } from "react-router-dom";
 import moment from 'moment';
 import LazyLoad from 'react-lazyload';
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { MishContext } from "../../context/MishContext";
-import { LoadList } from "../../loaders/LoadList";
+
 
 export const Popular = () => {
 

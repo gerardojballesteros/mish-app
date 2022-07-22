@@ -1,5 +1,4 @@
-
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { GetMovieById } from '../../helpers/GetMovieById';
 import { 
   ImagePoster, 
@@ -17,8 +16,6 @@ import {
   TextState,
   Items } from '../../styles/PageDetails/PageDetailsStyle';
 import moment from 'moment';
-import { Fragment } from 'react';
-
 
 export const PageDetails = () => {
 
@@ -27,15 +24,14 @@ export const PageDetails = () => {
     const movie: any = GetMovieById(number);
     const budget = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie?.budget);
     const revenue = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie?.revenue);
-
-
+    
   return (
     <Page>
-      <ImagePoster src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie?.backdrop_path}`}/>
+      <ImagePoster src={movie?.backdrop_path === undefined ? ('') : (`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie?.backdrop_path}`)}/>
       <Bg></Bg>
       <Description>
         <BoxOne>
-          <ImageFront src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie?.poster_path}`} />
+          <ImageFront src={movie?.poster_path === undefined ? ('') : (`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie?.poster_path}`)} />
           <TextContent>
             <h1>{movie?.title} ({moment(movie?.release_date).format('YYYY')})</h1>
             <div className="date-categories">
@@ -96,7 +92,6 @@ export const PageDetails = () => {
               {movie?.belongs_to_collection?.backdrop_path === undefined ? ( null ) : ( <img src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie?.belongs_to_collection?.backdrop_path}`}alt="" /> )}
               {movie?.backdrop_path === undefined ? ( null ) : ( <img src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie?.backdrop_path}`} alt="" /> )}
             </ImagesOther>
-            
         </BoxTwo>
       </Description>
     </Page>

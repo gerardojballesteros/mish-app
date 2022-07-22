@@ -12,7 +12,7 @@ export const useApi = () => {
     const [isLoadingList, setIsLoadingList] = useState<boolean>(true)
     
     const { id } = useParams();
-    const number = Number(id)
+    const number: any = Number(id)
 
     useEffect(() => {
         getPopular()
@@ -41,7 +41,7 @@ export const useApi = () => {
     }
     
     const getNowDetails = async () => {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=83ba2946f90777e8d79b338bbf7d4a37&language=es-ES`)
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${number ? number : 507086}?api_key=83ba2946f90777e8d79b338bbf7d4a37&language=es-ES`)
         const data = await response.json();
         const res = [data]
         setGetDetails(res)
