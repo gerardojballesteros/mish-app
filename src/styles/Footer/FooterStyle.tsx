@@ -21,7 +21,9 @@ export const FooterContent = styled.footer`
         transition: .3s ease;
         color: #747373;
         font-weight: 600;
-        
+        img{
+            width: 100px;
+        }
         &:hover{
             color: #EC1420;
         }

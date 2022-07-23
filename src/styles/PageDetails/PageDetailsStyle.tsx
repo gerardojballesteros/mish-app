@@ -149,8 +149,6 @@ export const TextContent = styled.div`
 `
 export const Average = styled.div`
     display: flex;
-    width: 100%;
-    height: 50px;
     align-items: center;
     @media ${devices.mobile} {
         margin-top: 40px;
@@ -160,12 +158,13 @@ export const Average = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60px;
-        height: 40px;
+        padding: 8px 15px;
         border-radius: 10px;
         background: #ffffff10;
         backdrop-filter: blur(10px);
-        
+        @media ${devices.mobile} {
+            padding: 8px 50px;
+        }
         p{
             font-weight: 600;
             color: white;
