@@ -24,7 +24,7 @@ export const PageDetails = () => {
     const movie: any = GetMovieById(number);
     const budget = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie?.budget);
     const revenue = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(movie?.revenue);
-    console.log(movie)
+
   return (
     <Page>
       <ImagePoster src={movie?.backdrop_path === undefined ? ('') : (`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie?.backdrop_path}`)}/>
