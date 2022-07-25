@@ -3,6 +3,7 @@ import { Bg, Description, Title, PopularScreen, Overview } from '../../styles/Ho
 import { Button } from '../../styles/Button/Button';
 import moment from 'moment';
 import LazyLoad from 'react-lazyload';
+import { Link } from "react-router-dom";
 export const NowPlaying = () => {
 
   const { nowPlaying } = useApi();
@@ -11,7 +12,7 @@ export const NowPlaying = () => {
     
       <>
      
-        {!nowPlaying ? null : nowPlaying?.slice(4, 5).map(({title, release_date, backdrop_path, overview}, index) => {
+        {!nowPlaying ? null : nowPlaying?.slice(4, 5).map(({title, release_date, backdrop_path, overview, id}, index) => {
           const fecha: any = release_date;
           return(
             <LazyLoad key={index} height={200}>
@@ -21,7 +22,9 @@ export const NowPlaying = () => {
                 <h1 className="now-title">En cartelera hoy.</h1>
                     <Title>{title}<p>({moment(fecha).format('YYYY')})</p></Title>
                     <Overview>{overview}</Overview>
-                    <Button>Ver más</Button>
+                    <Link to={`/movie/${id}`} >
+                      <Button>Ver más</Button>
+                    </Link>
                 </Description>
                 </PopularScreen>
             </LazyLoad>
